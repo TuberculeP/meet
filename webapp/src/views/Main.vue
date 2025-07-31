@@ -176,7 +176,7 @@ function getRoomParticipantCount(roomId: number): number {
 // Rejoindre une salle existante
 async function joinRoom(room: Room) {
   if (!authStore.user) {
-    router.push("/auth/login");
+    router.push("/login");
     return;
   }
 
@@ -192,7 +192,7 @@ async function joinRoom(room: Room) {
 // Rejoindre une salle rapide (crée la salle si elle n'existe pas)
 async function joinQuickRoom(roomNumber: string) {
   if (!authStore.user) {
-    router.push("/auth/login");
+    router.push("/login");
     return;
   }
 

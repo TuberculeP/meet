@@ -215,7 +215,7 @@ async function loadRoomInfo() {
 // Initialiser la connexion à la salle
 async function initializeRoom() {
   if (!authStore.user) {
-    router.push("/auth/login");
+    router.push("/login");
     return;
   }
 

@@ -33,7 +33,7 @@ const routes = [
 ];
 
 const getGuardedRoutes = () => {
-  const guardedMatches = ["app"];
+  const guardedMatches = ["app", "room"];
   return routes.map((route) => {
     if (guardedMatches.some((match) => route.path.includes(match))) {
       return {
