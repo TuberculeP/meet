@@ -1,9 +1,15 @@
 <template>
   <h2>Login</h2>
   <div>
-    <input type="email" v-model="form.email" placeholder="Email" />
-    <input type="password" v-model="form.password" placeholder="Mot de passe" />
-    <button @click="submitForm">Envoyer</button>
+    <form @submit.prevent="submitForm">
+      <input type="email" v-model="form.email" placeholder="Email" />
+      <input
+        type="password"
+        v-model="form.password"
+        placeholder="Mot de passe"
+      />
+      <button>Envoyer</button>
+    </form>
     <router-link :to="{ name: 'app-register' }">
       Pas encore inscrit ?
     </router-link>

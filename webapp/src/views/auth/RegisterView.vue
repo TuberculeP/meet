@@ -16,6 +16,7 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 import apiClient from "../../lib/utils/apiClient";
+import { useRouter } from "vue-router";
 
 const form = reactive({
   email: "",
@@ -23,6 +24,8 @@ const form = reactive({
   firstName: "",
   lastName: "",
 });
+
+const router = useRouter();
 
 async function submitForm() {
   try {
@@ -32,6 +35,9 @@ async function submitForm() {
       "webapp/src/components/FormulaireDégueulasse.vue:23 result",
       result.data,
     );
+    if (!result.error) {
+      router.push("/login");
+    }
   } catch (error) {
     console.error("Erreur lors de l'envoi du formulaire :", error);
   }
