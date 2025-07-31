@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import LoginView from "./views/auth/LoginView.vue";
 import RegisterView from "./views/auth/RegisterView.vue";
+import RoomView from "./views/RoomView.vue";
 
 import { useAuthStore } from "./stores/authStore";
 import apiClient from "./lib/utils/apiClient";
@@ -26,6 +27,7 @@ async function authGuard(to: any, from: any, next: any) {
 const routes = [
   { path: "/", redirect: "/app", name: "home-redirect" },
   { path: "/app", component: Main, name: "landing-main" },
+  { path: "/room/:id", component: RoomView, name: "room-view" },
   { path: "/login", component: LoginView, name: "app-login" },
   { path: "/register", component: RegisterView, name: "app-register" },
 ];

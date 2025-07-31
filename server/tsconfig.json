@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "module": "CommonJS",
     "moduleResolution": "node",
     "noImplicitReturns": true,
